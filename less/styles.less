@@ -1,0 +1,179 @@
+// IMPORTS
+
+@import 'variables';
+@import 'mixins';
+
+// GENERAL
+
+html {
+    font-size:16px;
+    box-sizing:border-box;
+}
+*, *:after, *:before {
+    box-sizing:inherit;
+}
+a {
+    .link(@color-primary);
+}
+.container {
+	.wrapper;
+	margin:0 auto;
+}
+section {
+    padding:@padding-section;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Raleway', sans-serif;
+}
+h1, h2 {
+    font-weight:600;
+    color:@color-primary;
+}
+h3, h4 {
+    font-weight:500;
+    color:@color-text-2;
+}
+h1 {
+    font-size: @fontsize-h1;
+    @media screen and (max-width:600px) {
+        font-size:1.5rem;
+    }
+}
+h2 {
+    font-size: @fontsize-h2;
+}
+h3 {
+    font-size: @fontsize-h3;
+    margin:1rem 0 1.5rem;
+    @media screen and (max-width:992px) {
+        margin:1rem 0;
+    }
+}
+h4 {
+    font-size: @fontsize-h4;
+}
+
+// BUTTONS
+
+.btn {
+    color: @color-text-2;
+    transition:background 1s linear;
+    text-transform: none;
+    &:hover {
+        color: @color-text-2;
+    }
+}
+.small-btn {
+    .button(@color-secondary);
+}
+.btn-large {
+    .button(@color-primary);
+}
+
+// NAV 
+
+nav {
+    background:@color-section-1;
+    // box-shadow:none;
+    .brand-logo {
+        .link(@color-primary);
+        @media screen and (max-width:600px) {
+            font-size:1.5rem;
+        }
+    }
+    a {
+        .link(@color-primary);
+    }
+    i.material-icons {
+        font-size:2rem;
+    }
+    ul {
+        li {
+            &.active {
+                background:none;
+                a {
+                    .link(@color-primary);
+                }
+            }
+        }
+        a {
+            color:@color-text-1;
+            &:hover, &:active {
+                background:none;
+            }
+        }
+    }
+    .dropdown-content li:hover {
+        background:none;
+    }
+    .dropdown-content li > a {
+        .link(@color-primary);
+    }
+}
+
+// HEADER
+
+header {
+    background:@color-section-2;
+    padding:@padding-section;
+    text-align:center;
+    .btn {
+        margin-top:2rem;
+    }
+}
+
+// BREADCRUMB
+
+.breadcrumb-nav {
+    background:@color-primary;
+    padding:@padding-menu;
+}
+.breadcrumb:before {
+    vertical-align: middle;
+}
+
+// SERVICES
+
+.services {
+    text-align:center;
+}
+.service {
+    background:@color-primary;
+    border-radius:50%;
+    text-align:center;
+    color:@color-text-2;
+    width:15rem;
+    height:15rem;
+    display:inline-block;
+    margin-right:4rem;
+    margin-bottom:1rem;
+    @media screen and (max-width:992px) {
+        border-radius:0;
+        margin-right:0;
+        width:100%;
+        height:13rem;
+    }
+    i {
+        margin-top:1.5rem;
+    }
+    .btn-floating {
+        background:@color-text-2;
+        i {
+            margin-top:0;
+            color:@color-primary;
+        }
+    }
+    &:last-child {
+        margin-right:0;
+    }
+}
+
+// FORMS
+
+.input-field input:focus + label {
+    color: red !important;
+  }
+.input-field input:focus {
+    border-bottom: 1px solid red !important;
+    box-shadow: 0 1px 0 0 red !important
+  }

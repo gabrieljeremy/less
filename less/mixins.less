@@ -1,0 +1,56 @@
+.keyframes (@name, @rules) {
+@-webkit-keyframes @animation_name {
+    @rules();
+}
+@keyframes @animation_name {
+    @rules();
+}
+}
+.animation(@arguments) {
+    -webkit-animation: @arguments;
+    -moz-animation: @arguments;
+    animation: @arguments;
+}
+.scale (@factor) {
+    -webkit-transform: scale(@factor);
+    -ms-transform: scale(@factor);
+    -o-transform: scale(@factor);
+}
+.rotate (@deg) {
+    -webkit-transform: rotate(@deg);
+    -ms-transform: rotate(@deg);
+    -o-transform: rotate(@deg);
+}
+.skew (@deg, @deg2) {
+    -webkit-transform: skew(@deg, @deg2);
+    -ms-transform: skew(@deg, @deg2);
+    -o-transform: skew(@deg, @deg2);
+}
+.translate (@x, @y:0) {
+    -webkit-transform: translate(@x, @y);
+    -ms-transform: translate(@x, @y);
+    -o-transform: translate(@x, @y);
+}
+.wrapper (@width: 1024px) {
+    max-width:@width;
+margin:0 auto;
+}
+.clearfix {
+&:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+}
+.link(@color) {
+color:@color;
+&:hover, &:active {
+    color:lighten(@color, 10%);
+}
+}
+.button(@bgColor) {
+background:@bgColor;
+&:hover, &:active {
+    background:lighten(@bgColor, 10%);
+}
+}
